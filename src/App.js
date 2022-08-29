@@ -12,6 +12,7 @@ import Messages from './Screens/Main/Messages/Messages';
 
 import Settings from './Screens/Main/Settings/Settings';
 import Theme from './Screens/Main/Settings/Theme/Theme';
+import EditProfile from './Screens/Main/Settings/EditProfile/EditProfile';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -47,6 +48,7 @@ const App = () => {
         <Stack.Screen name="Login" component={Login}></Stack.Screen>
         <Stack.Screen name="Main" component={Main} />
         <Stack.Screen name="Theme" component={Theme} />
+        <Stack.Screen name="EditProfile" component={EditProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,4 +1,4 @@
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, Text, SafeAreaView, Image, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import styles from './Login.style';
 import Input from '../../Components/Input/Input';
@@ -23,7 +23,7 @@ const Login = ({navigation}) => {
       </View>
       <View>
         <Text style={styles.phoneNumberText}>Phone Number</Text>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
           {/* alan kodlarının olduğu bir data buldum. O datayı picker paketinin içerisinde render ettim. */}
           <Picker
             style={styles.picker}
@@ -38,6 +38,12 @@ const Login = ({navigation}) => {
               />
             ))}
           </Picker>
+          <View style={styles.inputPhone}>
+            <TextInput
+              style={styles.inputPhoneText}
+              placeholder="Phone Number "
+            />
+          </View>
         </View>
         <Input placeholder="first Name" />
         <Input placeholder="Last Name" />

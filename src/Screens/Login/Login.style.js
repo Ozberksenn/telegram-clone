@@ -12,4 +12,15 @@ export default StyleSheet.create({
     marginLeft: 10,
     width: Dimensions.get('window').width / 2.4,
   },
+  inputPhone: {
+    borderRadius: 15,
+    marginLeft: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#000',
+    width: 190,
+  },
+  inputPhoneText: {
+    fontSize: 18,
+    left: 10,
+  },
 });

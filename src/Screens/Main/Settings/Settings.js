@@ -1,4 +1,4 @@
-import {SafeAreaView, View, Image} from 'react-native';
+import {SafeAreaView, View, Image, ImageBackground} from 'react-native';
 import React from 'react';
 import Button from '../../../Components/Button/Button';
 import styles from './Settings.style';
@@ -20,7 +20,10 @@ const Settings = () => {
           onPress={() => navigation.navigate('Theme')}
           buttonName="theme"
         />
-        <Button buttonName="edit profile" />
+        <Button
+          onPress={() => navigation.navigate('EditProfile')}
+          buttonName="edit profile"
+        />
       </View>
       <View style={{marginTop: 100}}>
         <Button buttonName="Log out" />
