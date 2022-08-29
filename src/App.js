@@ -9,7 +9,9 @@ import Login from './Screens/Login/Login';
 
 import Contact from './Screens/Main/Contact/Contact';
 import Messages from './Screens/Main/Messages/Messages';
+
 import Settings from './Screens/Main/Settings/Settings';
+import Theme from './Screens/Main/Settings/Theme/Theme';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -44,6 +46,7 @@ const App = () => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login}></Stack.Screen>
         <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="Theme" component={Theme} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -8,6 +8,7 @@ export default StyleSheet.create({
     marginRight: 70,
     backgroundColor: '#fff',
     borderRadius: 20,
+    borderWidth: 1,
   },
-  buttonText: {textAlign: 'center', color: '#000'},
+  buttonText: {textAlign: 'center', color: '#000', fontWeight: '600'},
 });

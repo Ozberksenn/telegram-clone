@@ -44,7 +44,10 @@ const Login = ({navigation}) => {
         <Input placeholder="User Name" />
       </View>
       <View>
-        <Button onPress={() => navigation.navigate('Main')} />
+        <Button
+          buttonName="Giriş Yap"
+          onPress={() => navigation.navigate('Main')}
+        />
       </View>
     </SafeAreaView>
   );
