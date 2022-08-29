@@ -8,30 +8,72 @@
     },
     {
         "id" : 2,
-        "firstName" : "Michael",
-        "lastName" : "Scott",
-        "username" :"michaelscott",
-        "photo" : "https://picsum.photos/200/300"
+        "firstName" : "Dwight",
+        "lastName" : "Schrute",
+        "username" :"dwightschrute",
+        "photo" : "https://ilerigeridergi.com/wp-content/uploads/2020/11/SIRA-DISI-SAMPIYONLAR_KAPAK.jpg"
     },
     {
         "id" : 3,
-        "firstName" : "Michael",
-        "lastName" : "Scott",
-        "username" :"michaelscott",
-        "photo" : "https://picsum.photos/200/300"
+        "firstName" : "Jim",
+        "lastName" : "Halpert",
+        "username" :"jimhalpert",
+        "photo" : "https://miro.medium.com/max/780/1*LEnstcllFZKNMVn24WTrwA.jpeg"
     },
     {
         "id" : 4,
-        "firstName" : "Michael",
-        "lastName" : "Scott",
-        "username" :"michaelscott",
-        "photo" : "https://picsum.photos/200/300"
+        "firstName" : "Kevin",
+        "lastName" : "Malone",
+        "username" :"kevinmalone",
+        "photo" : "https://static3.srcdn.com/wordpress/wp-content/uploads/2020/09/The-Office-Goodbye-Toby-One.jpg"
     },
     {
         "id" : 5,
-        "firstName" : "Michael",
-        "lastName" : "Scott",
-        "username" :"michaelscott",
-        "photo" : "https://picsum.photos/200/300"
+        "firstName" : "Pam",
+        "lastName" : "Beasly",
+        "username" :"pambeasly",
+        "photo" : "https://rollingstone.uol.com.br/media/uploads/pam-the-office-jenna-fischer-foto-reproducao.jpg"
+    },
+    {
+        "id" : 6,
+        "firstName" : "Oscar",
+        "lastName" : "Martinez",
+        "username" :"oscarmartinez",
+        "photo" : "https://static.wikia.nocookie.net/theoffice/images/2/25/Oscar_Martinez.jpg/revision/latest?cb=20170701085818"
+    },
+    {
+        "id" : 7,
+        "firstName" : "Stanley",
+        "lastName" : "Hudson",
+        "username" :"stanleyhudson",
+        "photo" : "https://www.looper.com/img/gallery/whatever-happened-to-stanley-from-the-office/intro-1574100890.jpg"
+    },
+    {
+        "id" : 8,
+        "firstName" : "Ryan",
+        "lastName" : "Howard",
+        "username" :"ryanhoward",
+        "photo" : "https://cdn3.whatculture.com/images/2019/04/af37849e38ce830a-600x338.jpg"
+    },
+    {
+        "id" : 9,
+        "firstName" : "Kelly",
+        "lastName" : "Kapoor",
+        "username" :"kellykapoor",
+        "photo" : "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/entertainment/Screen-Shot-2019-12-17-at-124022-PM-5182f6de576537d9a9a68f3a6b80ead9.jpg"
+    },
+    {
+        "id" : 10,
+        "firstName" : "Angela",
+        "lastName" : "Martin",
+        "username" :"angelamartin",
+        "photo" : "https://i.pinimg.com/originals/e5/67/cc/e567cc9331491412a1e53e83c7766a1a.jpg"
+    },
+    {
+        "id" : 11,
+        "firstName" : "Phyllis",
+        "lastName" : "Smith",
+        "username" :"phlsmith",
+        "photo" : "https://people.com/thmb/P_uSxR3QluAfDqCLDfTrbl8BPA0=/2000x1333/filters:fill(auto,1)/phyllis-smith-2000-c585c7b8f9b34638b06cd25ff208bf43.jpg"
     }
 ]

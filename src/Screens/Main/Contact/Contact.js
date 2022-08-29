@@ -1,4 +1,4 @@
-import {View, Text, FlatList} from 'react-native';
+import {View, FlatList} from 'react-native';
 import React from 'react';
 import Header from '../../../Components/Header/Header';
 import ContactCard from '../../../Components/ContactCard/ContactCard';
@@ -8,6 +8,7 @@ const Contact = () => {
     <View>
       <Header />
       <FlatList
+        style={{height: '85%'}}
         data={ContactData}
         renderItem={({item}) => <ContactCard data={item} />}
       />
