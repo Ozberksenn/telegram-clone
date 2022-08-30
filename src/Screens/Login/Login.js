@@ -5,11 +5,24 @@ import Input from '../../Components/Input/Input';
 import Button from '../../Components/Button/Button';
 import {Picker} from '@react-native-picker/picker';
 import data from '../../areaCode.json';
-import {useNavigation} from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/Feather';
+import {useUser} from '../../Context/UserContext';
+
 const Login = ({navigation}) => {
-  const navigate = useNavigation();
+  const {user, setUser} = useUser();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [userName, setUserName] = useState('');
   const [selectedCode, setSelectedCode] = useState();
+
+  const handleClick = () => {
+    setUser({
+      ...user,
+      userName: userName,
+      lastName: lastName,
+      firstName: firstName,
+    });
+    navigation.navigate('Main');
+  };
   {
     /* Login Screen eğer kullanıcı daha önceden girmişse bu ekran render edilmeyecek. */
   }
@@ -45,14 +58,24 @@ const Login = ({navigation}) => {
             />
           </View>
         </View>
-        <Input placeholder="first Name" />
-        <Input placeholder="Last Name" />
-        <Input placeholder="User Name" />
+        <Input
+          onChangeText={value => setFirstName(value)}
+          placeholder="first Name"
+        />
+        <Input
+          onChangeText={value => setLastName(value)}
+          placeholder="Last Name"
+        />
+        <Input
+          onChangeText={value => setUserName(value)}
+          placeholder="User Name"
+        />
       </View>
       <View>
         <Button
           buttonName="Giriş Yap"
-          onPress={() => navigation.navigate('Main')}
+          onPress={handleClick}
+          disabled={!userName && !firstName && !lastName}
         />
       </View>
     </SafeAreaView>

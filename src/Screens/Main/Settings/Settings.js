@@ -1,4 +1,4 @@
-import {SafeAreaView, View, Image, ImageBackground} from 'react-native';
+import {SafeAreaView, View, Image} from 'react-native';
 import React from 'react';
 import Button from '../../../Components/Button/Button';
 import styles from './Settings.style';
