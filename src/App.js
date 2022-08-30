@@ -1,7 +1,6 @@
-import {View, Text} from 'react-native';
 import React from 'react';
-import {ThemeProvider} from './Context/ThemeContext';
 import {UserProvider} from './Context/UserContext';
+import ThemeProvider from './Provider/ThemeProvider';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -45,18 +44,18 @@ const Main = () => {
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <UserProvider>
-        <NavigationContainer>
+    <NavigationContainer>
+      <ThemeProvider>
+        <UserProvider>
           <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="Login" component={Login}></Stack.Screen>
             <Stack.Screen name="Main" component={Main} />
             <Stack.Screen name="Theme" component={Theme} />
             <Stack.Screen name="EditProfile" component={EditProfile} />
           </Stack.Navigator>
-        </NavigationContainer>
-      </UserProvider>
-    </ThemeProvider>
+        </UserProvider>
+      </ThemeProvider>
+    </NavigationContainer>
   );
 };
 

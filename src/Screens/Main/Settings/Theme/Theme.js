@@ -3,31 +3,34 @@ import React, {useContext} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
 import styles from './Theme.style';
-import {useTheme} from '../../../../Context/ThemeContext';
+import {ThemeContext} from '../../../../Context/ThemeContext';
 
 const Theme = () => {
   /* const {theme, toggleTheme} = useContext(ThemeContext); */
-  const {backgroundColor, toggleTheme} = useTheme();
+  const {theme, setTheme} = useContext(ThemeContext);
+
+  const handleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   return (
     <SafeAreaView
-      style={
-        ({
-          flex: 1,
-          justifyContent: 'center',
-        },
-        [backgroundColor])
-      }>
+      style={[
+        styles.container,
+        {backgroundColor: theme === 'light' ? 'white' : '#262626'},
+      ]}>
       <View style={styles.editProfileContainer}>
-        <TouchableOpacity
-          onPress={() => toggleTheme('dark')}
-          style={{alignItems: 'center'}}>
+        <TouchableOpacity onPress={handleTheme} style={{alignItems: 'center'}}>
           <Icon style={styles.darkIcon} name="moon" />
-          <Text style={styles.text}>Dark</Text>
+          <Text
+            style={[
+              styles.text,
+              {color: theme === 'light' ? '#262626' : 'white'},
+            ]}>
+            Dark
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => toggleTheme('light')}
-          style={{alignItems: 'center'}}>
+        <TouchableOpacity onPress={handleTheme} style={{alignItems: 'center'}}>
           <Icon style={styles.lightIcon} name="sun" />
           <Text style={styles.text}>Light</Text>
         </TouchableOpacity>
