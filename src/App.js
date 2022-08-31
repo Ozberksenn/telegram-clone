@@ -11,6 +11,8 @@ import Login from './Screens/Login/Login';
 import Contact from './Screens/Main/Contact/Contact';
 import Messages from './Screens/Main/Messages/Messages';
 
+import Chat from './Screens/Main/Chat/Chat';
+
 import Settings from './Screens/Main/Settings/Settings';
 import Theme from './Screens/Main/Settings/Theme/Theme';
 import EditProfile from './Screens/Main/Settings/EditProfile/EditProfile';
@@ -52,6 +54,7 @@ const App = () => {
             <Stack.Screen name="Main" component={Main} />
             <Stack.Screen name="Theme" component={Theme} />
             <Stack.Screen name="EditProfile" component={EditProfile} />
+            <Stack.Screen name="Chat" component={Chat} />
           </Stack.Navigator>
         </UserProvider>
       </ThemeProvider>

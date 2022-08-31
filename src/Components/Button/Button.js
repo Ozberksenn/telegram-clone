@@ -11,7 +11,7 @@ const Button = ({onPress, buttonName, disabled}) => {
       style={[
         styles.buttonContainer,
         {
-          backgroundColor: theme.backgroundColor,
+          backgroundColor: theme.buttonbgColor,
         },
       ]}>
       <Text style={[styles.buttonText, {color: theme.buttonTextColor}]}>

@@ -4,5 +4,6 @@ export default {
   color: 'white',
   buttonTextColor: 'white',
   inputColor: '#2C3333',
+  buttonbgColor: '#2C3333',
   inputTextColor: '#000',
 };
