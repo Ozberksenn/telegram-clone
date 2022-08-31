@@ -6,16 +6,18 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './Login.style';
 import Input from '../../Components/Input/Input';
 import Button from '../../Components/Button/Button';
 import {Picker} from '@react-native-picker/picker';
 import data from '../../areaCode.json';
 import {useUser} from '../../Context/UserContext';
+import {ThemeContext} from '../../Context/ThemeContext';
 
 const Login = ({navigation}) => {
   const {user, setUser} = useUser();
+  const {theme} = useContext(ThemeContext);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [userName, setUserName] = useState('');
@@ -34,7 +36,8 @@ const Login = ({navigation}) => {
     /* Login Screen eğer kullanıcı daha önceden girmişse bu ekran render edilmeyecek. */
   }
   return (
-    <SafeAreaView>
+    <SafeAreaView
+      style={[styles.container, {backgroundColor: theme.backgrounColor}]}>
       <ScrollView>
         <View style={styles.logoContainer}>
           <Image
@@ -43,7 +46,9 @@ const Login = ({navigation}) => {
           />
         </View>
         <View>
-          <Text style={styles.phoneNumberText}>Phone Number</Text>
+          <Text style={[styles.phoneNumberText, {color: theme.color}]}>
+            Phone Number
+          </Text>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             {/* alan kodlarının olduğu bir data buldum. O datayı picker paketinin içerisinde render ettim. */}
             <Picker

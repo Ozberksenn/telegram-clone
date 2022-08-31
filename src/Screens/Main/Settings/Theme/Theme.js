@@ -7,30 +7,17 @@ import {ThemeContext} from '../../../../Context/ThemeContext';
 
 const Theme = () => {
   /* const {theme, toggleTheme} = useContext(ThemeContext); */
-  const {theme, setTheme} = useContext(ThemeContext);
-
-  const handleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  const {theme, toggleTheme} = useContext(ThemeContext);
 
   return (
     <SafeAreaView
-      style={[
-        styles.container,
-        {backgroundColor: theme === 'light' ? 'white' : '#262626'},
-      ]}>
+      style={[styles.container, {backgroundColor: theme.backgrounColor}]}>
       <View style={styles.editProfileContainer}>
-        <TouchableOpacity onPress={handleTheme} style={{alignItems: 'center'}}>
+        <TouchableOpacity onPress={toggleTheme} style={{alignItems: 'center'}}>
           <Icon style={styles.darkIcon} name="moon" />
-          <Text
-            style={[
-              styles.text,
-              {color: theme === 'light' ? '#262626' : 'white'},
-            ]}>
-            Dark
-          </Text>
+          <Text style={[styles.text, {color: theme.color}]}>Dark</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleTheme} style={{alignItems: 'center'}}>
+        <TouchableOpacity onPress={toggleTheme} style={{alignItems: 'center'}}>
           <Icon style={styles.lightIcon} name="sun" />
           <Text style={styles.text}>Light</Text>
         </TouchableOpacity>

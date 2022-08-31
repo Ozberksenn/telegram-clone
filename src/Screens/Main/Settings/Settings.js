@@ -1,12 +1,15 @@
 import {SafeAreaView, View, Image} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
+import {ThemeContext} from '../../../Context/ThemeContext';
 import Button from '../../../Components/Button/Button';
 import styles from './Settings.style';
 import {useNavigation} from '@react-navigation/native';
 const Settings = () => {
+  const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
   return (
-    <SafeAreaView>
+    <SafeAreaView
+      style={[styles.container, {backgroundColor: theme.backgrounColor}]}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}

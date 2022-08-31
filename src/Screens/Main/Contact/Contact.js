@@ -1,13 +1,15 @@
 import {View, FlatList} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './Contact.style';
 import Header from '../../../Components/Header/Header';
 import ContactCard from '../../../Components/ContactCard/ContactCard';
 import ContactData from '../../../ContactData.json';
+import {ThemeContext} from '../../../Context/ThemeContext';
 const Contact = () => {
+  const {theme} = useContext(ThemeContext);
   const renderSeperator = () => <View style={styles.seperator} />;
   return (
-    <View>
+    <View style={[styles.container, {backgroundColor: theme.backgrounColor}]}>
       <Header />
       <FlatList
         ItemSeparatorComponent={
