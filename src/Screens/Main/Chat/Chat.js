@@ -6,7 +6,7 @@ import ChatFooter from '../../../Components/ChatFooter/ChatFooter';
 import {MessageContext} from '../../../Context/MessageContext';
 const Chat = ({route}) => {
   const {message, setMessage} = useContext(MessageContext);
-  const {firstName, profilPhoto} = route.params;
+  const {firstName, profilPhoto, user_id} = route.params;
   return (
     <ImageBackground
       source={{
@@ -18,8 +18,8 @@ const Chat = ({route}) => {
           <ChatHeader firstName={firstName} profilPhoto={profilPhoto} />
 
           {message.map((item, index) =>
-            message[0]?.message ? (
-              message[0].is_sended_by_me === true ? (
+            item.message && item.user === user_id ? (
+              item.is_sended_by_me === true ? (
                 <Text key={index} style={styles.messageTextMe}>
                   {item.message}
                 </Text>
@@ -35,7 +35,7 @@ const Chat = ({route}) => {
         </View>
       </ScrollView>
       <View>
-        <ChatFooter />
+        <ChatFooter user_id={user_id} />
       </View>
     </ImageBackground>
   );

@@ -3,7 +3,7 @@ import React, {useContext, useState} from 'react';
 import styles from './ChatFooter.style';
 import Icon from 'react-native-vector-icons/Feather';
 import {MessageContext} from '../../Context/MessageContext';
-const ChatFooter = () => {
+const ChatFooter = ({user_id}) => {
   {
     /* Bu component Chat ekranında mesaj gönderebildiğimiz alanı kapsamakata. */
   }
@@ -14,7 +14,7 @@ const ChatFooter = () => {
       ...message,
       {
         created_at: Date.now(), // anlık saat
-        user_id: 1,
+        user: user_id,
         is_sended_by_me: true, // mesajı ben mi gönderdim ?
         message: onChange,
       },
