@@ -19,6 +19,7 @@ const ChatFooter = () => {
         message: onChange,
       },
     ]);
+    setOnChange('');
   };
   return (
     <View>
@@ -28,6 +29,7 @@ const ChatFooter = () => {
         <View style={styles.textInputContainer}>
           <TextInput
             onChangeText={value => setOnChange(value)}
+            value={onChange}
             style={styles.textInput}
             placeholderTextColor="white"
             placeholder="Mesaj Yazın"
