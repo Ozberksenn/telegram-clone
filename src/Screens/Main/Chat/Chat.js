@@ -15,18 +15,16 @@ const Chat = ({route}) => {
       style={styles.container}>
       <View>
         <ChatHeader firstName={firstName} profilPhoto={profilPhoto} />
-        {message[0]?.message ? (
-          message.is_sended_by_me === false ? (
-            <Text style={styles.messageTextMe}>
-              {message[0]?.message ? message[0]?.message : 'özberk gay'}
-            </Text>
+        {message.map(item =>
+          message[0]?.message ? (
+            message[0].is_sended_by_me === true ? (
+              <Text style={styles.messageTextMe}>{item.message}</Text>
+            ) : (
+              <Text style={styles.messageTextOther}>{item.message}</Text>
+            )
           ) : (
-            <Text style={styles.messageTextOther}>
-              {message[0]?.message ? message[0]?.message : 'özberk gay'}
-            </Text>
-          )
-        ) : (
-          false
+            false
+          ),
         )}
       </View>
 
