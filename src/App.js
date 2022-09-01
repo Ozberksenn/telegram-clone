@@ -1,6 +1,7 @@
 import React from 'react';
 import {UserProvider} from './Context/UserContext';
 import ThemeProvider from './Provider/ThemeProvider';
+import {MessageProvider} from './Context/MessageContext';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -49,13 +50,15 @@ const App = () => {
     <NavigationContainer>
       <ThemeProvider>
         <UserProvider>
-          <Stack.Navigator screenOptions={{headerShown: false}}>
-            <Stack.Screen name="Login" component={Login}></Stack.Screen>
-            <Stack.Screen name="Main" component={Main} />
-            <Stack.Screen name="Theme" component={Theme} />
-            <Stack.Screen name="EditProfile" component={EditProfile} />
-            <Stack.Screen name="Chat" component={Chat} />
-          </Stack.Navigator>
+          <MessageProvider>
+            <Stack.Navigator screenOptions={{headerShown: false}}>
+              <Stack.Screen name="Login" component={Login}></Stack.Screen>
+              <Stack.Screen name="Main" component={Main} />
+              <Stack.Screen name="Theme" component={Theme} />
+              <Stack.Screen name="EditProfile" component={EditProfile} />
+              <Stack.Screen name="Chat" component={Chat} />
+            </Stack.Navigator>
+          </MessageProvider>
         </UserProvider>
       </ThemeProvider>
     </NavigationContainer>

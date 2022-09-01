@@ -12,6 +12,7 @@ const ContactList = ({data}) => {
         navigation.navigate('Chat', {
           firstName: data.firstName,
           profilPhoto: data.photo,
+          user_id: data.id,
         })
       }
       style={[styles.container, {backgroundColor: theme.backgrounColor}]}>

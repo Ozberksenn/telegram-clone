@@ -8,9 +8,11 @@ import {ThemeContext} from '../../../../Context/ThemeContext';
 const EditProfile = ({navigation}) => {
   const {theme} = useContext(ThemeContext);
   const {user, setUser} = useUser();
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [userName, setUserName] = useState('');
+  const [firstName, setFirstName] = useState(
+    user.firstName ? user.firstName : '',
+  );
+  const [lastName, setLastName] = useState(user.lastName ? user.lastName : '');
+  const [userName, setUserName] = useState(user.userName ? user.userName : '');
 
   const handleSaveButton = () => {
     setUser({
@@ -19,7 +21,7 @@ const EditProfile = ({navigation}) => {
       lastName: lastName,
       firstName: firstName,
     });
-    if (userName.length > 0 && lastName.length > 0 && firstName.length > 0) {
+    if (userName && lastName && firstName) {
       navigation.navigate('Settings');
     } else {
       Alert.alert('Warning !', 'Input values are not left blank ');
@@ -38,7 +40,7 @@ const EditProfile = ({navigation}) => {
           <Input
             placeholder="First Name"
             onChangeText={value => setFirstName(value)}
-            defaultValue={user.firstName}
+            value={firstName}
           />
         </View>
         <View>
@@ -46,7 +48,7 @@ const EditProfile = ({navigation}) => {
           <Input
             placeholder="Last Name"
             onChangeText={value => setLastName(value)}
-            defaultValue={user.lastName}
+            value={lastName}
           />
         </View>
         <View>
@@ -54,7 +56,7 @@ const EditProfile = ({navigation}) => {
           <Input
             placeholder="User Name"
             onChangeText={value => setUserName(value)}
-            defaultValue={user.userName}
+            value={userName}
           />
         </View>
         <View>

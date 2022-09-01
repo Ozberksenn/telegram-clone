@@ -11,7 +11,6 @@ const DEFAULT_USER = {
 const UserProvider = ({children}) => {
   const [user, setUser] = useState({});
 
-  console.log(user);
   const values = {
     user,
     setUser,
