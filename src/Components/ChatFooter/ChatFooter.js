@@ -3,7 +3,7 @@ import React, {useContext, useState} from 'react';
 import styles from './ChatFooter.style';
 import Icon from 'react-native-vector-icons/Feather';
 import {MessageContext} from '../../Context/MessageContext';
-const ChatFooter = ({user_id}) => {
+const ChatFooter = ({user_id, profilPhoto, firstName}) => {
   {
     /* Bu component Chat ekranında mesaj gönderebildiğimiz alanı kapsamakata. */
   }
@@ -17,6 +17,8 @@ const ChatFooter = ({user_id}) => {
         user: user_id,
         is_sended_by_me: true, // mesajı ben mi gönderdim ?
         message: onChange,
+        firstName: firstName,
+        photo: profilPhoto,
       },
     ]);
     setOnChange('');

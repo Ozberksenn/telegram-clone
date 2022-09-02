@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {UserProvider} from './Context/UserContext';
 import ThemeProvider from './Provider/ThemeProvider';
 import {MessageProvider} from './Context/MessageContext';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/Feather';
 
 import Login from './Screens/Login/Login';
@@ -20,7 +21,6 @@ import EditProfile from './Screens/Main/Settings/EditProfile/EditProfile';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
 const Main = () => {
   return (
     <Tab.Navigator
@@ -46,13 +46,25 @@ const Main = () => {
 };
 
 const App = () => {
+  const [_user, set_User] = useState();
+  const getUser = async () => {
+    const userData = await AsyncStorage.getItem('user');
+    const _user = userData ? JSON.parse(userData) : null;
+    set_User(_user);
+  };
+  useEffect(async () => {
+    getUser();
+  }, []);
+
   return (
     <NavigationContainer>
       <ThemeProvider>
         <UserProvider>
           <MessageProvider>
             <Stack.Navigator screenOptions={{headerShown: false}}>
-              <Stack.Screen name="Login" component={Login}></Stack.Screen>
+              {!_user && (
+                <Stack.Screen name="Login" component={Login}></Stack.Screen>
+              )}
               <Stack.Screen name="Main" component={Main} />
               <Stack.Screen name="Theme" component={Theme} />
               <Stack.Screen name="EditProfile" component={EditProfile} />

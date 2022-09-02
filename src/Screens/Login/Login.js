@@ -14,6 +14,7 @@ import {Picker} from '@react-native-picker/picker';
 import data from '../../areaCode.json';
 import {useUser} from '../../Context/UserContext';
 import {ThemeContext} from '../../Context/ThemeContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({navigation}) => {
   const {user, setUser} = useUser();
@@ -23,13 +24,21 @@ const Login = ({navigation}) => {
   const [userName, setUserName] = useState('');
   const [selectedCode, setSelectedCode] = useState();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setUser({
       ...user,
       userName: userName,
       lastName: lastName,
       firstName: firstName,
     });
+    await AsyncStorage.setItem(
+      'user',
+      JSON.stringify({
+        userName: userName,
+        lastName: lastName,
+        firstName: firstName,
+      }),
+    );
     navigation.navigate('Main');
   };
   {

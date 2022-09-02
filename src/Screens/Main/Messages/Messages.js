@@ -1,10 +1,16 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+import {View, Text, FlatList} from 'react-native';
+import React, {useContext} from 'react';
 import Header from '../../../Components/Header/Header';
-const Messages = () => {
+import {MessageContext} from '../../../Context/MessageContext';
+import MessagesCard from '../../../Components/MessagesCard/MessagesCard';
+const Messages = ({item}) => {
+  const {message} = useContext(MessageContext);
   return (
     <View>
       <Header />
+      {message.map(item => (
+        <MessagesCard data={item} />
+      ))}
     </View>
   );
 };

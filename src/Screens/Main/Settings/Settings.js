@@ -4,9 +4,16 @@ import {ThemeContext} from '../../../Context/ThemeContext';
 import Button from '../../../Components/Button/Button';
 import styles from './Settings.style';
 import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const Settings = () => {
   const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
+
+  const handleLogout = async () => {
+    await AsyncStorage.removeItem('user');
+    navigation.navigate('Login');
+  };
+
   return (
     <SafeAreaView
       style={[styles.container, {backgroundColor: theme.backgrounColor}]}>
@@ -29,7 +36,7 @@ const Settings = () => {
         />
       </View>
       <View style={{marginTop: 100}}>
-        <Button buttonName="Log out" />
+        <Button onPress={handleLogout} buttonName="Log out" />
       </View>
     </SafeAreaView>
   );

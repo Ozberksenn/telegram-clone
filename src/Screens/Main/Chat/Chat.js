@@ -16,7 +16,7 @@ const Chat = ({route}) => {
       <ScrollView>
         <View>
           <ChatHeader firstName={firstName} profilPhoto={profilPhoto} />
-
+          {/* inputtan gelen mesajları map ile render ediyoruz. Params kullanarak hangi user_id ye ait olduğunu belirttik. */}
           {message.map((item, index) =>
             item.message && item.user === user_id ? (
               item.is_sended_by_me === true ? (
@@ -35,7 +35,11 @@ const Chat = ({route}) => {
         </View>
       </ScrollView>
       <View>
-        <ChatFooter user_id={user_id} />
+        <ChatFooter
+          firstName={firstName}
+          profilPhoto={profilPhoto}
+          user_id={user_id}
+        />
       </View>
     </ImageBackground>
   );
