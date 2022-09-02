@@ -6,13 +6,14 @@ import styles from './Settings.style';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const Settings = () => {
+ 
   const {theme} = useContext(ThemeContext);
   const navigation = useNavigation();
 
   const handleLogout = async () => {
     await AsyncStorage.removeItem('user');
     navigation.navigate('Login');
-  };
+  }; // Clicking the LogOut button clears the localStorage.
 
   return (
     <SafeAreaView

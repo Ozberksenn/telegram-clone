@@ -6,12 +6,18 @@ import MessagesCard from '../../../Components/MessagesCard/MessagesCard';
 import ContactData from '../../../ContactData.json';
 
 const Messages = () => {
+
+
   const {message} = useContext(MessageContext);
   const users = ContactData;
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    users.map(e => {
+    filtered()
+  }, []);
+  
+  const filtered = async () => {
+    await users.map(e => {
       e.messages = [];
       message.map(item => {
         if (e.id === item.user) {
@@ -20,7 +26,9 @@ const Messages = () => {
       });
     });
     setData(users);
-  }, [users]);
+  }
+
+ 
 
   return (
     <View>

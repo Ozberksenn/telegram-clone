@@ -6,7 +6,7 @@ import styles from './Theme.style';
 import {ThemeContext} from '../../../../Context/ThemeContext';
 
 const Theme = () => {
-  /* const {theme, toggleTheme} = useContext(ThemeContext); */
+  /* The theme of the application is changed from this screen. */
   const {theme, toggleTheme} = useContext(ThemeContext);
 
   return (

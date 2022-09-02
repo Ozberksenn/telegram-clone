@@ -53,9 +53,11 @@ const App = () => {
     const _user = userData ? JSON.parse(userData) : null;
     set_User(_user);
   };
-  useEffect(async () => {
-     await getUser();
-  }, []);
+  
+ useEffect(() => {
+  getUser()
+  }, [])
+
 
   return (
     <NavigationContainer>

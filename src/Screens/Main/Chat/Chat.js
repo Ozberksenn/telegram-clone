@@ -5,6 +5,7 @@ import ChatHeader from '../../../Components/ChatHeader/ChatHeader';
 import ChatFooter from '../../../Components/ChatFooter/ChatFooter';
 import {MessageContext} from '../../../Context/MessageContext';
 const Chat = ({route}) => {
+  // messaging screen. Messages sent to us will not be displayed
   const {message, setMessage} = useContext(MessageContext);
   const {firstName, profilPhoto, user_id} = route.params;
   return (

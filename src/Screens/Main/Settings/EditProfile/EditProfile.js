@@ -6,6 +6,7 @@ import styles from './EditProfile.style';
 import {useUser} from '../../../../Context/UserContext';
 import {ThemeContext} from '../../../../Context/ThemeContext';
 const EditProfile = ({navigation}) => {
+  // kullanıcı bilgilerini bu sayfada güncelleriz.
   const {theme} = useContext(ThemeContext);
   const {user, setUser} = useUser();
   const [firstName, setFirstName] = useState(
@@ -25,7 +26,7 @@ const EditProfile = ({navigation}) => {
       navigation.navigate('Settings');
     } else {
       Alert.alert('Warning !', 'Input values are not left blank ');
-    }
+    } // save butonuna tıklandığında contexti yeni input değerlerini kaydeder.
   };
   return (
     <SafeAreaView

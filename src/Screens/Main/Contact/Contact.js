@@ -6,6 +6,7 @@ import ContactCard from '../../../Components/ContactCard/ContactCard';
 import ContactData from '../../../ContactData.json';
 import {ThemeContext} from '../../../Context/ThemeContext';
 const Contact = () => {
+// I created a data and pulled the contact list from that data.
   const {theme} = useContext(ThemeContext);
   const renderSeperator = () => <View style={styles.seperator} />;
   return (
@@ -14,7 +15,8 @@ const Contact = () => {
       <FlatList
         ItemSeparatorComponent={
           renderSeperator
-        } /* her bir item arasına çizgi ekletiyorum. */
+        } /* 
+        I add a line between each item. */
         style={{height: '85%'}}
         data={ContactData}
         renderItem={({item}) => <ContactCard data={item} />}
