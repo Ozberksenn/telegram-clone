@@ -9,7 +9,6 @@ const MessageProvider = ({children}) => {
     message,
     setMessage,
   };
-  console.log(message);
 
   return (
     <MessageContext.Provider value={values}>{children}</MessageContext.Provider>

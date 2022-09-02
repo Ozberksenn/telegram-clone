@@ -36,6 +36,7 @@ const Main = () => {
           }
           return <Icon name={iconName} size={size} style={{color: '#000'}} />;
         },
+        tabBarActiveTintColor: 'black',
         headerShown: false,
       })}>
       <Tab.Screen name="Contact" component={Contact}></Tab.Screen>
@@ -53,7 +54,7 @@ const App = () => {
     set_User(_user);
   };
   useEffect(async () => {
-    getUser();
+     await getUser();
   }, []);
 
   return (
