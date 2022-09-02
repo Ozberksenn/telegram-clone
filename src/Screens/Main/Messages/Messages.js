@@ -1,4 +1,4 @@
-import {View, Text, FlatList} from 'react-native';
+import {View,ScrollView} from 'react-native';
 import React, {useContext, useEffect, useState} from 'react';
 import Header from '../../../Components/Header/Header';
 import {MessageContext} from '../../../Context/MessageContext';
@@ -13,10 +13,10 @@ const Messages = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    filtered()
-  }, []);
-  
-  const filtered = async () => {
+    filter()
+  }, [data]);
+
+  const filter = async () => {
     await users.map(e => {
       e.messages = [];
       message.map(item => {
@@ -27,11 +27,11 @@ const Messages = () => {
     });
     setData(users);
   }
-
  
 
   return (
     <View>
+      <ScrollView>
       <Header />
       {data &&
         data.map(item => {
@@ -39,6 +39,7 @@ const Messages = () => {
             return <MessagesCard data={item?.messages} />;
           }
         })}
+        </ScrollView>
     </View>
   );
 };
